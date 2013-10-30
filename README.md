@@ -52,7 +52,7 @@ A global JavaScript add-on to insert an additional menu into the main navigation
 
 Forks that are still under development, that aren't yet ready for prime time.
 
-### [dev-archive-discussions](http://github.com/smtech/canvas/tree/dev-archive-discussions/www/www/api/archive-discussions)
+### [dev-archive-discussions](http://github.com/smtech/canvas/tree/dev-archive-discussions/www/api/archive-discussions)
 
 A tool to generate a JSON export of a course or group's discussions. Particularly useful for account-level groups that lack any meaningful copy/archive capabilities out of the box. Currently, this tool is works fine... so long as you have fewer than 50 discussions, each with fewer than 50 topic entries (because I haven't bothered to deal with the pagination in the Canvas API's responses -- I didn't need to for the one thing that I needed to back up).
 
