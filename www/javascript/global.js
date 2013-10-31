@@ -44,7 +44,13 @@ function stmarks_globalJavascript() {
 			stmarks_discussionPermalinks();
 		}
 	);
-		
+	
+	$.getScript(
+		pathToScripts + 'embedded-documentation.js',
+		function() {
+			stmarks_embeddedDocumentation();
+		}
+	);
 }
 
 stmarks_globalJavascript();
