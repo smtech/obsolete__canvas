@@ -23,22 +23,32 @@ if (isset($_REQUEST['organizational_unit_url'])) {
 	debugFlag('START', getWorkingDir());
 	$path = parse_url($_REQUEST['organizational_unit_url'], PHP_URL_PATH);
 	$path = preg_replace('|(accounts/\d+/)?(\w+/\d+).*|', '$2', $path);
-	$discussionTopics = calLCanvasApi(CANVAS_API_GET, "$path/discussion_topics",
-		array(
-			'per_page' => '50'
-		)
-	); // FIXME: this doesn't really take into account pagination...
-	for ($i = 0; $i < count($discussionTopics); $i++) {
-		$topicEntries = callCanvasApi(CANVAS_API_GET, "$path/discussion_topics/{$discussionTopics[$i]['id']}/entries",
-			array(
-				'per_page' => '50'
-			)
-		); // FIXME: this doesn't really take into account pagination...
-		if (count($topicEntries)) {
-			$discussionTopics[$i]['entries'] = $topicEntries;
-		}
-	}
-	$jsonExport = json_encode($discussionTopics);
+	$discussionTopicsApi = new CanvasApiProcess(CANVAS_API_URL, CANVAS_API_TOKEN);
+	$topicEntriesApi = new CanvasApiProcess(CANVAS_API_URL, CANVAS_API_TOKEN);
+	
+	$discussionTopics = $discussionTopicsApi->get("$path/discussion_topics");
+	$archivedDiscussions = array();
+	do {
+		foreach ($discussionTopics as $discussionTopic) {
+			$archivedEntries = array();
+			try {
+				$topicEntries = $topicEntriesApi->get("$path/discussion_topics/{$discussionTopic['id']}/entries", array(), true);
+				do {
+					$archivedEntries = array_merge($archivedEntries, $topicEntries);
+				} while ($topicEntries = $topicEntriesApi->nextPage());
+			} catch (Pest_Forbidden $e) {
+				// do nothing -- it just means there are no responses to the discussion topic
+			}
+
+			if (count($archivedEntries)) {
+				$discussionTopic['entries'] = $archivedEntries;
+			}
+			$archivedDiscussions[] = $discussionTopic;
+		}	
+	} while ($discussionTopics = $discussionTopicsApi->nextPage());
+	
+	// build export file
+	$jsonExport = json_encode($archivedDiscussions);
 	$organizationalUnit = callCanvasApi(CANVAS_API_GET, $path);
 	$fileName = buildPath(getWorkingDir(), date(TIMESTAMP_FORMAT) . preg_replace('|[^\w _]+|', '-', $organizationalUnit['name']) . NAME_SEPARATOR . (INCLUDE_ORGANIZATIONAL_UNIT_ID ? $organizationalUnit['id'] . NAME_SEPARATOR : '') . FILE_NAME . '.json');
 	file_put_contents($fileName, $jsonExport);
