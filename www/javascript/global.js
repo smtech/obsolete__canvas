@@ -7,8 +7,8 @@ var STMARKS = {
 /* wait for a particular DOM element to be ready (i.e. created) and then call
    a function to take the next steps. Used thus:
    
-	function test(DOMElement) {
-		alert(DOMElement.innerHTML);
+	function test(element) {
+		alert(element.innerHTML);
 	}
 	stmarks_waitForDOMById(/.*\/courses\/\d+\/settings/, 'right-side', test);
 	
@@ -20,9 +20,9 @@ var STMARKS = {
 	itself matches. */
 function stmarks_waitForDOMById(UrlPattern, nodeId, callback) {
 	if (UrlPattern.test(document.location.href)) {
-		var DOMElement = document.getElementById(nodeId);
-		if (DOMElement !== undefined) {
-			callback(DOMElement);
+		var element = document.getElementById(nodeId);
+		if (element !== undefined) {
+			callback(element);
 		} else {
 			window.setTimeout(
 				function() {
@@ -38,9 +38,9 @@ function stmarks_waitForDOMById(UrlPattern, nodeId, callback) {
 
 function stmarks_waitForDOMByClassName(UrlPattern, className, callback) {
 	if (UrlPattern.test(document.location.href)) {
-		var DOMElements = document.getElementsByClassName(className);
-		if (DOMElements !== undefined) {
-			callback(DOMElements);
+		var elements = document.getElementsByClassName(className);
+		if (elements !== undefined) {
+			callback(elements);
 		} else {
 			window.setTimeout(
 				function() {
