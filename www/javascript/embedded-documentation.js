@@ -25,6 +25,21 @@ function stmarks_embeddedDocumentation_twoWeekGradingDisclaimer() {
 	stmarks_waitForDOMById(/.*\/courses\/\d+\/gradebook2.*/, 'gradebook_wrapper', stmarks_insertTwoWeekGradingDisclaimerBefore);
 }
 
+function stmarks_appendSectionInstructions(sections) {
+	var instructions = document.createElement('li');
+	instructions.innerHTML = stmarks_buildAcTechIcon() + 'If you would like to add an additional section to this course, or to combine multiple sections into a single course, please read <a target="_blank" href="/courses/489/wiki/sections-vs-courses">this documentation</a>.';
+	sections.appendChild(instructions);
+}
+
+function stmarks_embeddedDocumentation_sectionInstructions() {
+	stmarks_waitForDOMById(/.*\/courses\/\d+\/settings/, 'sections', stmarks_appendSectionInstructions);
+}
+
+function stmarks_buildAcTechIcon() {
+	return '<span class="academic-technology-documentation-icon"></span>';
+}
+
 function stmarks_embeddedDocumentation() {
 	stmarks_embeddedDocumentation_twoWeekGradingDisclaimer();
+	stmarks_embeddedDocumentation_sectionInstructions();
 }
