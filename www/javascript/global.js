@@ -77,6 +77,13 @@ function stmarks_globalJavascript() {
 	);	
 	
 	$.getScript(
+		pathToScripts + 'faculty-journal.js',
+		function() {
+			stmarks_facultyJournal();
+		}
+	);
+		
+	$.getScript(
 		pathToScripts + 'hide-future-courses.js',
 		function() {
 			stmarks_hideFutureCourses();
@@ -101,6 +108,13 @@ function stmarks_globalJavascript() {
 		pathToScripts + 'embedded-documentation.js',
 		function() {
 			stmarks_embeddedDocumentation();
+		}
+	);
+	
+	$.getScript(
+		pathToScripts + 'rce-notify-unsaved-changes.js',
+		function() {
+			stmarks_rceNotifyUnsavedChanges();
 		}
 	);
 }
