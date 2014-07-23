@@ -60,7 +60,7 @@ A tool to generate a JSON export of a course or group's discussions. Particularl
 
 ### [dev-embedded-documentation](http://github.com/smtech/canvas/tree/dev-grading-scheme/www/javascript/embedded-documentation.js)
 
-Wouldn't it be nice if there were reminders _in Canvas_ with links to appropriate documentation for certain features? Let's add them in where they belong.
+This fork has become its own repo: [smtech/smcanvas-embdedded-documentation](https://github.com/smtech/smcanvas-embdedded-documentation).
 
 ### [dev-grading-analytics](https://github.com/smtech/canvas/tree/dev-grading-analytics/www/api/grading-analytics)
 
