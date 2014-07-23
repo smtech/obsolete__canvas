@@ -142,8 +142,46 @@ body.modal #modal-box.login-box a { color: #ffffff !important; }
  ***********************************************************************/
  
 
-#fl_container {
-	background-image: url("mobile-login.png?1");
+/*background image*/
+body{
+background: url(mobile/background.png);
+}
+/*institution logo*/
+#f1_container{
+background: url(mobile/logo.png) no-repeat center top;
+}
+/*dialog background*/
+.face{
+background: url(mobile/dialog-background.png);
+/*resize the border or shadow of the login page*/
+border-radius: 0.3em;
+box-shadow: 0px 4px 10px #999;
+}
+/*resize the border or font weight of the login fields*/
+input{
+background: #f3f3f3;
+border-radius: 5px;
+font-weight: normal;
+}
+/*adjust the border, color, or shadow of the login button*/
+button[type=submit]{
+border: none;
+color: #fff;
+text-shadow: 0 -1px 0 #36629b;
+}
+.flip-to-back, .flip-to-front{
+text-shadow: 0 1px 0 #fff;
+border: none;
+border-radius: 6px;
+background: #dddddd; /* Old browsers */
+background: -moz-linear-gradient(top, #dddddd 0%, #f3f3f3 50%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dddddd), color-stop(50%,#f3f3f3)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #dddddd 0%,#f3f3f3 50%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #dddddd 0%,#f3f3f3 50%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #dddddd 0%,#f3f3f3 50%); /* IE10+ */
+background: linear-gradient(to bottom, #dddddd 0%,#f3f3f3 50%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dddddd', endColorstr='#f3f3f3',GradientType=0 ); /* IE6-9 */
+color: #888;
 }
 
 
