@@ -110,13 +110,6 @@ function stmarks_globalJavascript() {
 			stmarks_embeddedDocumentation();
 		}
 	);
-	
-	$.getScript(
-		pathToScripts + 'rce-notify-unsaved-changes.js',
-		function() {
-			stmarks_rceNotifyUnsavedChanges();
-		}
-	);
 }
 
 stmarks_globalJavascript();
