@@ -1,75 +1,35 @@
-# St. Mark's Canvas Customizations
+# This repo has been archived
 
-A collection of customizations to the our [Canvas instance](http://stmarksschool.instructure.org), many of which are running off of our [development LAMP server](http://area51.stmarksschool.org)
+This is an archival repo, maintained so that previously posted links will not break. All of the content in this repo has been distributed across smaller, more manageable repos. In conversation with other Canvas admins, I have described three levels of Canvas customization:
 
-### master
+  1. Using the Canvas GUI to connect up stylesheets for branding purposes or or prefab JavaScripts to make specific tweaks
+  2. Using the API to run more intensive scripts (but this is all still documented and above-board)
+  3. Really abusing the well-structured Canvas XHHTML for your own purposes
 
-Ready for prime time, live and in use!
+I have organized our repos into these three "levels" of modification:
 
-### dev-*
+## "Level 1" Customization
 
-Features we're working on, forked from the most recent master/develop branch as appropriate. One feature per branch, no foolin'!
+I just want to use the GUI to hook a couple things up.
 
+  - [smcanvas-branding](https://github.com/smtech/smcanvas-branding) -- branding (and UI improvements) via Global CSS
+  - [smcanvas-javascript](https://github.com/smtech/smcanvas-javascript) -- a variety of UI improvements via Global JavaScript
 
+## "Level 2" Customization
 
-## Merged Forks
+I'm fine with the API -- there's [good documentation](https://canvas.instructure.com/doc/api/index.html) for it!
 
-Forks that are merged into the master tree. The dev-* version of any fork is still the most current code for that fork, but the current live version is maintained in the master tree.
+  - [smcanvaslib](https://github.com/smtech/smcanvaslib) -- a supporting "framework" for many of the other repos
+  - [smcanvas-archive-discussions](https://github.com/smtech/smcanvas-smcanvas-archive-discussions) -- archive course/group discussions as JSON files
+  - [smcanvas-blackboard-import](https://github.com/smtech/smcanvas-blackboard-import) -- improved Blackboard course archive import
+  - [smcanvas-ics-sync](https://github.com/smtech/smcanvas-ics-sync) -- sync ICS/webcal feeds into Canvas courses, groups and users
+  - [smcanvas-scripts](https://github.com/smtech/smcanvas-scripts) -- a variety of API scripts for management purposes
 
-### [dev-blackboard-import](http://github.com/smtech/canvas/tree/dev-blackboard-import/www/api/blackboard-import)
+## "Level 3" Customization
 
-This fork has become its own repo: [smtech/smcanvas-blackboard-import](https://github.com/smtech/smcanvas-blackboard-import).
+Let's break things! (This is the point where I got serious and put my own secure server in the AWS cloud.)
 
-### [dev-branding](http://github.com/smtech/canvas/tree/dev-branding/www/branding)
-
-Apply St. Mark's branding to our Canvas instance.
-
-[Known Issues](http://github.com/smtech/canvas/issues?milestone=10)
-
-### [dev-calendar-ics](http://github.com/smtech/canvas/tree/dev-calendar-ics/www/api/calendar-ics)
-
-This fork has become its own repo: [smtech/smcanvas-ics-sync](https://github.com/smtech/smcanvas-ics-sync).
-
-### [dev-support](http://github.com/smtech/canvas/tree/dev-support/www/include) (Formerly [dev-canvas-api](http://github.com/smtech/canvas/tree/dev-canvas-api))
-
-This fork has become its own repo: [smtech/smcanvaslib](https://github.com/smtech/smcanvaslib).
-
-### [dev-faculty-journal](http://github.com/smtech/canvas/tree/dev-faculty-journal/www/javascript/faculty-journal.js)
-
-This fork has become its own repo: [smtech/smcanvas-faculty-journal](https://github.com/smtech/smcanvas-faculty-journal).
-
-### [dev-javascript](http://github.com/smtech/canvas/tree/dev-javascript/www/javascript)
-
-This fork has become its own repo: [smtech/smcanvas-javascript](https://github.com/smtech/smcanvas-javascript).
-
-### [dev-resources-menu](http://github.com/smtech/canvas/tree/dev-resources-menu/www/javascript/resources-menu.js)
-
-This fork has become its own repo: [smtech/smcanvas-navigation-menu](https://github.com/smtech/smcanvas-navigation-menu).
-
-
-
-## Development Forks
-
-Forks that are still under development, that aren't yet ready for prime time.
-
-### [dev-archive-discussions](http://github.com/smtech/canvas/tree/dev-archive-discussions/www/api/archive-discussions)
-
-This fork has become its own repo: [smtech/smcanvas-archive-discussions](https://github.com/smtech/smcanvas-archive-discussions).
-
-### [dev-embedded-documentation](http://github.com/smtech/canvas/tree/dev-grading-scheme/www/javascript/embedded-documentation.js)
-
-This fork has become its own repo: [smtech/smcanvas-embdedded-documentation](https://github.com/smtech/smcanvas-embdedded-documentation).
-
-### [dev-grading-analytics](https://github.com/smtech/canvas/tree/dev-grading-analytics/www/api/grading-analytics)
-
-This fork has become its own repo: [smtech/smcanvas-grading-analytics](https://github.com/smtech/smcanvas-grading-analytics).
-
-### [dev-grading-scheme](http://github.com/smtech/canvas/tree/dev-grading-scheme/www/api/grading-scheme)
-
-For whatever reason, Canvas defaults to its own grading scheme, rather than a custom grading scheme. Once courses have been created, this will run through the directory and update the course grading schemes to a specific custom grading scheme. This also includes a crontab-scheduled job to run through recent assignments and update them to a custom grading scheme if they are set to a Letter Grade and are using the default grading scheme.
-
-[Known Issues](http://github.com/smtech/canvas/issues?milestone=9)
-
-### [dev-scripts](http://github.com/smtech/canvas/tree/dev-scripts/www/api/scripts)
-
-This fork has become its own repo: [smtech/smcanvas-scripts](https://github.com/smtech/smcanvas-scripts).
+  - [smcanvas-embdedded-documentation](https://github.com/smtech/smcanvas-embdedded-documentation) -- embed custom documentation in the UI
+  - [smcanvas-faculty-journal](https://github.com/smtech/smcanvas-faculty-journal) -- modify the faculty journal UI to be course-centric
+  - [smcanvas-grading-analytics](https://github.com/smtech/smcanvas-grading-analytics) -- provide grading analytics and feedback to faculty
+  - [smcanvas-navigation-menu](https://github.com/smtech/smcanvas-navigation-menu) -- add additional global navigation menus
