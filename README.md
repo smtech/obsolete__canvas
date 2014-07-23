@@ -50,9 +50,7 @@ Miscellaneous one-off JavaScript add-ons (see [below](#dev-javascript-1) for unm
 
 ### [dev-resources-menu](http://github.com/smtech/canvas/tree/dev-resources-menu/www/javascript/resources-menu.js)
 
-A global JavaScript add-on to insert an additional menu into the main navigation toolbar across the top of the screen. The contents of the menu can be customized in the javascript file.
-
-[Known Issues](http://github.com/smtech/canvas/issues?milestone=2)
+This fork has become its own repo: [smtech/smcanvas-navigation-menu](https://github.com/smtech/smcanvas-navigation-menu).
 
 
 
