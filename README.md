@@ -40,13 +40,7 @@ This fork has become its own repo: [smtech/smcanvas-faculty-journal](https://git
 
 ### [dev-javascript](http://github.com/smtech/canvas/tree/dev-javascript/www/javascript)
 
-Miscellaneous one-off JavaScript add-ons (see [below](#dev-javascript-1) for unmerged scripts):
-
-  - [hide-future-courses](http://github.com/smtech/canvas/tree/dev-javascript/www/javascript/hide-future-courses.js) removes unpublished courses that occurred in the past from "future" enrollments (a logical error, per [this ticket](https://help.instructure.com/requests/173156)).
-
-  - [hide-page-lists-if-pages-hidden](http://github.com/smtech/canvas/tree/dev-javascript/www/javascript/hide-page-lists-if-pages-hidden.js) removes the lists of recently modified and all pages from the right sidebar if the Pages link is not available in the left sidebar (so user's without permission to browse Pages cannot browse pages, per [this feature request](https://help.instructure.com/entries/21511835-Hide-All-Pages-List-when-Pages-is-Removed-from-Navigation))
-
-[Known Issues](http://github.com/smtech/canvas/issues?milestone=3)
+This fork has become its own repo: [smtech/smcanvas-javascript](https://github.com/smtech/smcanvas-javascript).
 
 ### [dev-resources-menu](http://github.com/smtech/canvas/tree/dev-resources-menu/www/javascript/resources-menu.js)
 
@@ -67,14 +61,6 @@ A tool to generate a JSON export of a course or group's discussions. Particularl
 ### [dev-embedded-documentation](http://github.com/smtech/canvas/tree/dev-grading-scheme/www/javascript/embedded-documentation.js)
 
 Wouldn't it be nice if there were reminders _in Canvas_ with links to appropriate documentation for certain features? Let's add them in where they belong.
-
-### [dev-javascript](http://github.com/smtech/canvas/tree/dev-javascript/www/javascript)
-
-Miscellaneous one-off JavaScript add-ons (see [above](#dev-javascript) for merged scripts):
-
-  - [discussion-permalinks](http://github.com/smtech/canvas/tree/dev-javascript/www/javascript/discussion-permalinks.js) reveals the permalinks to individual replies in Canvas discussions and announcements.
-
-[Known Issues](http://github.com/smtech/canvas/issues?milestone=3)
 
 ### [dev-grading-analytics](https://github.com/smtech/canvas/tree/dev-grading-analytics/www/api/grading-analytics)
 
